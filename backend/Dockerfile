@@ -12,7 +12,7 @@ WORKDIR /app
 COPY poetry.lock pyproject.toml /app/
 
 # Disable the creation of virtual environments
-RUN poetry config virtualenvs.create false
+RUN poetry config virtualenvs.create true
 
 # Install dependencies
 RUN poetry install

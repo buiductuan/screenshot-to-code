@@ -1,11 +1,8 @@
-import { FaGithub } from "react-icons/fa";
 import Footer from "./LandingPage/Footer";
 import { Button } from "../ui/button";
 import { SignUp } from "@clerk/clerk-react";
 import { useState } from "react";
 import { Dialog, DialogContent } from "../ui/dialog";
-import { Tweet } from "react-tweet";
-// import YouTube, { YouTubeProps } from "react-youtube";
 
 const LOGOS = ["microsoft", "amazon", "mit", "stanford", "bytedance", "baidu"];
 
@@ -91,28 +88,12 @@ function LandingPage() {
             <Button size="lg" className="text-lg py-6 px-8" onClick={signIn}>
               Get started
             </Button>
-            <Button
-              variant="secondary"
-              onClick={() =>
-                window.open(
-                  "https://github.com/abi/screenshot-to-code",
-                  "_blank"
-                )
-              }
-              className="flex items-center space-x-2 text-gray-600 hover:text-gray-900 py-6 px-8"
-            >
-              <FaGithub size={24} />
-              <span>GitHub</span>
-              <span className="text-sm bg-gray-200 rounded-full px-2 py-1">
-                53,939 stars
-              </span>
-            </Button>
           </div>
         </div>
       </header>
 
       {/* Logo wall */}
-      <div className="mx-auto mt-12 px-4 sm:px-0">
+      <div className="mx-auto mb-10 px-4 sm:px-0">
         <p className="text-gray-600 text-xl mb-10 text-center">
           #1 tool used by developers and designers from leading companies. Fully
           open source with 53,000+ stars on GitHub.
@@ -151,19 +132,7 @@ function LandingPage() {
       </div> */}
 
       {/* Here's what users have to say */}
-      <div className="mt-16">
-        <h2 className="text-gray-600 text-2xl mb-4 text-center">
-          Here's what users have to say
-        </h2>
-        <div className="px-3 grid grid-cols-1 sm:grid-cols-2 gap-2 items-start justify-items-center">
-          {/* <YouTube videoId="b2xi5qiiTOI" opts={youtubeOpts} /> */}
-          <Tweet id="1733865178905661940" />
-          {/* <Tweet id="1727586760584991054" /> Other Rowan Cheung tweet */}
-          <Tweet id="1727105236811366669" />
-          <Tweet id="1732032876739224028" />
-          <Tweet id="1728496255473459339" />
-        </div>
-      </div>
+      
 
       {/* Footer */}
       <Footer />

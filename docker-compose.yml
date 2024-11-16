@@ -1,5 +1,3 @@
-version: '3.9'
-
 services:
   backend:
     build: 
@@ -8,7 +6,8 @@ services:
     
     env_file:
       - .env
-    
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     # or 
     # environment:
       #- BACKEND_PORT=7001   # if you change the port, make sure to also change the VITE_WS_BACKEND_URL at frontend/.env.local
@@ -23,5 +22,16 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     ports:
       - "5173:5173"
+  
+  saas:
+    build:
+      context: ./saas-backend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+  
+
